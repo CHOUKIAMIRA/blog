@@ -1,7 +1,5 @@
 import { defineConfig } from 'vite';
-import ghPages from 'vite-plugin-gh-pages';
 
 export default defineConfig({
-  plugins: [ghPages()],
-  base: '/blog/', 
+  base: '/blog/',  // Remplacez 'nom-du-depot' par le nom de votre dépôt GitHub
 });
