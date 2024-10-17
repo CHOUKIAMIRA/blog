@@ -184,3 +184,24 @@ exports.codePassword=async(req,res)=>{
   }
   
 }
+exports.updatePassword = async (req, res) => {
+  const { nvPassword, codeReset } = req.body;
+  try {
+    const user = await users.findOne({ codeReset });
+console.log(user)
+    if (!user) {
+      return res.status(400).send({ msg: 'Code de réinitialisation invalide ou utilisateur introuvable.' });
+    }
+
+    // Hachage du nouveau mot de passe avec 10 salt rounds
+    const hashNvPassword = bcrypt.hashSync(nvPassword, 10);
+    user.password = hashNvPassword;
+    user.codeReset = null; // Facultatif : réinitialiser le code pour empêcher une réutilisation
+    await user.save();
+
+    return res.status(200).send({ msg: 'Mot de passe modifié avec succès.' });
+  } catch (error) {
+    console.error('Erreur lors de la mise à jour du mot de passe :', error);
+    return res.status(500).send({ msg: 'Erreur serveur lors de la mise à jour du mot de passe.' });
+  }
+};

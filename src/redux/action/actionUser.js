@@ -79,3 +79,24 @@ return {
          console.log(error)
         }
      }
+    
+     export const updatepassword = (data, navigate) => async (dispatch) => {
+        try {
+          // Envoi de la requête PUT pour mettre à jour le mot de passe avec le code de réinitialisation
+          await axios.put("http://localhost:8000/blog/update-password", data);
+      
+          // Si la mise à jour est réussie, dispatch l'action pour mettre à jour les informations de l'utilisateur
+          dispatch(getcurrent());
+      
+          // Redirection vers la page de connexion après le succès
+          navigate("/blog/");
+        } catch (error) {
+          // Affiche l'erreur dans la console pour débogage
+          console.error("Erreur lors de la mise à jour du mot de passe :", error.response.data);
+      
+          // Afficher un message d'erreur à l'utilisateur
+          throw new Error(error.response?.data?.msg || "Erreur lors de la mise à jour du mot de passe.");
+        }
+      };
+      
+     

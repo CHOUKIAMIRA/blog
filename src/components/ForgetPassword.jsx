@@ -16,8 +16,8 @@ function ForgetPassword() {
         }
     };
   return (
+    <div className='container'>
     <div className='home'>
-  
     <div> 
     <p style={{fontSize:"25px",color:"#B8B8B8"}}>Don't have an account?</p>
     <Link to="/blog/register"> <button className='btn'>REGISTER</button></Link>
@@ -33,7 +33,7 @@ function ForgetPassword() {
    
     
     </div>
-    
+    </div>
     </div>
   )
 }

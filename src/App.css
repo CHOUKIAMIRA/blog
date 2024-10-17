@@ -46,7 +46,7 @@
     cursor: pointer;  
   }
   .btn-login{
-    padding: 10px 35px;
+    padding: 10px 20px;
     border-radius: 10px;
     background-color: #B8B8B8;
     border:1px solid #B8B8B8;
@@ -71,6 +71,15 @@
      display: none;
       
       }
+      .uniquifier {
+        width:250px;
+        font-family: "Poppins", sans-serif;
+        font-size: 40px;
+        font-weight: 600; 
+        color: #855c72;
+        letter-spacing: 2px; 
+     
+    }
 @media screen and (max-width:1000px) {
   .home {
 visibility: hidden;

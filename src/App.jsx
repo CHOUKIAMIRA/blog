@@ -10,15 +10,17 @@ import ConfirmEmail from './components/ConfirmEmail';
 import ForgetPassword from './components/ForgetPassword';
 import CodePassword from './components/CodePassword';
 import SetPassword from './components/setPassword';
+import Profil from './components/Profil';
 function App() {
 
 
   return (
-    <div className='container'>
+    <div >
       <Routes>
       <Route path="/blog/" element={<Login/>} />
         <Route path="/blog/register" element={<Register/>} />
         <Route path="/blog/acceuil" element={<Acceuil/>} />
+        <Route path="/blog/profil" element={<Profil/>} />
         <Route path="/blog/forget" element={<ForgetPassword/>} />
         <Route path="/blog/code" element={<CodePassword/>} />
         <Route path="/blog/set" element={<SetPassword/>} />

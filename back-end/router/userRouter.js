@@ -1,6 +1,6 @@
 const express=require('express')
 const { registerValidation, validation, loginValidation } = require('../middelware/validation')
-const { register, login , getcurrent,getusers, confirmEmail, resetPassword, codePassword } = require('../controller/userController')
+const { register, login , getcurrent,getusers, confirmEmail, resetPassword, codePassword, updatePassword } = require('../controller/userController')
 const { isauth } = require('../middelware/isauth')
 
 const userRouter=express.Router()
@@ -11,4 +11,5 @@ userRouter.get("/blog/users",getusers)
 userRouter.get("/blog/confirm/:token",confirmEmail)
 userRouter.post("/blog/reset-password",resetPassword)
 userRouter.post("/blog/code-password",codePassword)
+userRouter.put("/blog/update-password",updatePassword)
 module.exports=userRouter

@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
+  image:{
+    type:String,
+    default:"https://thumbs.dreamstime.com/b/avatar-par-d%C3%A9faut-ic%C3%B4ne-profil-vectoriel-m%C3%A9dias-sociaux-utilisateur-portrait-176256935.jpg"
+  },
   password: {
     type: String,
     required: true

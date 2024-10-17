@@ -1,7 +1,8 @@
 const jwt=require("jsonwebtoken")
 const users=require("../model/userModel")
 exports.isauth=async(req,res,next)=>{
-    const token = req.headers("token")
+    const token = req.headers['token'];
+
     try {
         const secretkey="amira@90"
         const decode =jwt.decode(token,secretkey)

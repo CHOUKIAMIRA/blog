@@ -26,7 +26,7 @@ console.log(errors)
       )
     }
   return (
-
+    <div className='container'>
 <div className='home'> 
    <div className='login'>
         <h6>REGISTER</h6>
@@ -47,6 +47,7 @@ console.log(errors)
     <div>
     <p style={{fontSize:"25px",color:"#B8B8B8"}}> Have an account?</p> 
     <Link to="/blog/"> <button className='btn'>LOGIN</button></Link>
+    </div>
     </div>
     </div>
     )
